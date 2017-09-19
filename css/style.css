@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,html{
+    height:100%;
+}
+
+
+/* 天空模块样式 */
+
+
+.sky {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    background: linear-gradient(rgb(196, 228, 253),white);
+}
+
+
+/* 草地模块样式 */
+
+
+.grass {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    background: linear-gradient(to top,rgb(148, 190, 89),white);
+}
+
+
+/* 通过绝对定位和缩放调整摆放五个白云 */
+
+
+.cloud1{
+    position: absolute;
+    transform: scale(.7);
+    top: 21px;
+    right: -70px;
+    opacity: 0.9;
+    animation: wave1 linear 6s infinite;
+}
+
+.cloud2{
+    position: absolute;
+    transform: scale(.5);
+    top: -42px;
+    right: 49px;
+    opacity: 0.7;
+    animation: wave2 ease 8s infinite;
+}
+
+.cloud3{
+    position: absolute;
+    transform: scale(.5);
+    top: 68px;
+    right: 7px;
+    opacity: 0.8;
+    animation: wave3 ease-in 6s infinite;
+}
+
+.cloud4{
+    position: absolute;
+    transform: scale(.4);
+    top: 43px;
+    right: -100px;
+    opacity: 0.6;
+    animation: wave4 ease-out 10s infinite;
+}
+
+.cloud5{
+    position: absolute;
+    transform: scale(.5);
+    top: -40px;
+    right: -200px;
+    opacity: 0.5;
+    animation: wave5 ease-in-out 7s infinite;
+}
+
+
+/* 把五个圆形组合成一个通用的白云 */
+
+
+.cloudpiece1 {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.cloudpiece1::before {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    transform: translate(50px,35px);
+}
+
+.cloudpiece1::after {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    transform: translate(-30px,-40px);
+}
+
+.cloudpiece2 {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(-45px,-65px);
+}
+
+.cloudpiece2::after {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    content: "";
+    transform: translate(25px,10px);
+}
+
+/* 兔子图片位置设置 */
+
+img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+}
+
+/* 各个云朵的动画关键帧 */
+
+@keyframes wave1 {
+    from { right: -70px;  }
+    to { right: 1500px; }
+}
+
+@keyframes wave2 {
+    from { right: 49px;  }
+    to { right: 1500px; }
+}
+
+@keyframes wave3 {
+    from { right: 7px;  }
+    to { right: 1500px; }
+}
+
+@keyframes wave4 {
+    from { right: -100px;  }
+    to { right: 1200px; }
+}
+
+@keyframes wave5 {
+    from { right: -200px;  }
+    to { right: 1200px; }
+}
